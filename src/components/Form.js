@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {Base} from '../containers/Base'
-import { updateBase } from '../actions/pizza'
-import {connect} from 'react-redux'
+import { Base } from '../containers/Base';
+import { Sauce } from '../containers/Sauce'
+import { updateBase, updateSauce } from '../actions/pizza'
+import { connect } from 'react-redux'
 
 class Form extends Component {
 
@@ -9,11 +10,18 @@ class Form extends Component {
     this.props.updateBase(base)
   }
 
+  updateSauce = (sauce) => {
+  this.props.updateSauce(sauce)
+}
+
   render() {
     const { pizza } = this.props
 
     return (
+        <div>
         <Base onSubmit = {this.updateBase}/>
+        <Sauce onSubmit = {this.updateSauce}/>
+        </div>
     );
   }
 }
@@ -24,4 +32,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps, { updateBase })(Form)
+export default connect(mapStateToProps, { updateBase, updateSauce })(Form)
