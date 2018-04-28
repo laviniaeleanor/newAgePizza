@@ -27,7 +27,7 @@ class Cart extends PureComponent {
           <p><strong>Toppings</strong>:</p>
           {toppings}
 
-          <p><strong>Total</strong>: {pizza.base.price + pizza.sauce.price + toppingsPrice}</p>
+          <p><strong>Total</strong>: {Number(pizza.base.price) + Number(pizza.sauce.price) + Number(toppingsPrice)}</p>
         </Paper>)
       }
     }

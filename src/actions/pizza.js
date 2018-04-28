@@ -4,21 +4,21 @@ export const UPDATE_TOPPINGS = 'UPDATE_TOPPINGS'
 export const ADD_DELIVERY = 'ADD_DELIVERY'
 
 
-const updateBase = base => ({
+export const updateBase = base => ({
   type: UPDATE_BASE,
   payload: base
 })
 
-const updateSauce = sauce => ({
+export const updateSauce = sauce => ({
   type: UPDATE_SAUCE,
   payload: sauce
 })
 
-const updateToppings = topping => ({
+export const updateToppings = topping => ({
   type: UPDATE_TOPPINGS,
   payload: topping
 })
 
-const addDelivery = () => ({
+export const addDelivery = () => ({
   type: ADD_DELIVERY
 })

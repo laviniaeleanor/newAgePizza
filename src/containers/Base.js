@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
 import {base20, base25, base30, base35} from '../data/menu'
+// import {updateBase} from '../actions/pizza'
 
 export class Base extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  state = {}
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  handleChange = (e) => {
+        this.setState({name: e.target.name, price: e.target.value})
+    }
 
-  handleChange(event) {
-    this.setState({base: event.target.value});
-  }
-
-  handleSubmit(event) {
-    console.log(this.state.value);
-    event.preventDefault();
-  }
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.onSubmit(this.state)
+        console.log('You have selected:', this.state.name + this.state.price);
+}
 
   render() {
     return (
         <div>
-            <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
-              <input type="radio" name="base" value={base25} checked>1</input><br></br>
-              <input type="radio" name="base" value={base30}>2</input><br></br>
-              <input type="radio" name="base" value={base35}>3</input><br></br>
-              <input type="radio" name="base" value={base20}>4</input>
+            <form onSubmit={this.handleSubmit}>
+            <label> Choose your pizza size:<br></br>
+              <input type="radio" name= {base25.name} value={base25.price} onChange={this.handleChange} checked={this.state.name === base25.name}/>{base25.name}<br></br>
+              <input type="radio" name= {base30.name} value={base30.price} onChange={this.handleChange} checked={this.state.name === base30.name}/>{base30.name}<br></br>
+              <input type="radio" name= {base35.name} value={base35.price} onChange={this.handleChange} checked={this.state.name === base35.name}/>{base35.name}<br></br>
+              <input type="radio" name= {base20.name} value={base20.price} onChange={this.handleChange} checked={this.state.name === base20.name}/>{base20.name}<br></br>
+              </label>
+              <button className="btn btn-default" type="submit">Save</button>
             </form>
         </div>
     );
