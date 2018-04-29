@@ -1,6 +1,6 @@
 import { base25, mixItUp} from '../data/menu'
 import {UPDATE_BASE, UPDATE_SAUCE, UPDATE_TOPPINGS, ADD_DELIVERY} from '../actions/pizza'
-const initialState = {base: base25, sauce: mixItUp, toppings: ["cherryTomatoes"], delivery: false}
+const initialState = {base: base25, sauce: mixItUp, toppings: ["Cherry Tomatoes"], delivery: false}
 
 export default (state = initialState, action) => {
   switch (action.type) {

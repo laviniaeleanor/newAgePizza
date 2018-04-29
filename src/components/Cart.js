@@ -3,16 +3,22 @@ import {connect} from 'react-redux'
 import Paper from 'material-ui/Paper';
 import {addDelivery} from '../actions/pizza'
 import RaisedButton from 'material-ui/RaisedButton';
-import {teal700} from 'material-ui/styles/colors';
+import {teal700, deepOrange200} from 'material-ui/styles/colors';
 
 const style = {
-  width: 500,
-  padding: "2em",
-  margin: "1em",
-  textAlign: 'left',
-  display: 'inline-block',
-  backgroundColor: teal700,
-};
+    paper: {
+      width: 500,
+      padding: "2em",
+      margin: "1em",
+      textAlign: 'left',
+      display: 'inline-block',
+      backgroundColor: teal700,
+    },
+    button: {
+        width: 420,
+        height: 50,
+        fontFamily: 'Pacifico'
+    }};
 
 class Cart extends PureComponent {
 
@@ -30,21 +36,24 @@ class Cart extends PureComponent {
         const totalDelivery = total + (total/100*10)
 
         return (
-        <Paper style={style} zDepht='4'>
+        <Paper style={style.paper} zDepht='4'>
           <div className = "Cart">
-          <h1>~ Your new age pizza ~</h1>
+          <h1>~ Your new age pizza ~</h1><br></br>
 
-          <p><strong>Base</strong>: {pizza.base.name}, € {pizza.base.price}</p>
-          <p><strong>Sauce</strong>: {pizza.sauce.name}, € {pizza.sauce.price}</p>
+          <p><strong>Base</strong>: {pizza.base.name}, € {pizza.base.price}</p><br></br>
+          <p><strong>Sauce</strong>: {pizza.sauce.name}, € {pizza.sauce.price}</p><br></br>
           <p><strong>Toppings</strong>:</p>
-          {toppings}
-          <RaisedButton onClick = {this.addDelivery}>{pizza.delivery? "Remove Turbo Delivery":"Add Turbo Delivery"}</RaisedButton>
+          {toppings}<br></br>
           { pizza.delivery === false &&
-          <p><strong>Total</strong>: € {total}</p>
+          <p><strong>TOTAL</strong>: € {total}</p>
       }
       { pizza.delivery === true &&
-            <p><strong>Total</strong>: € {totalDelivery}</p>
+            <p><strong>TOTAL</strong>: € {totalDelivery}</p>
         }
+        <RaisedButton label = {pizza.delivery? "Remove Turbo Delivery":"Add Turbo Delivery"} style={style.button} onClick = {this.addDelivery}></RaisedButton><br></br><br></br>
+        <RaisedButton label="Place Order" style= {style.button} backgroundColor= {deepOrange200} onClick={()=> alert("Pizza is on it's way")} /><br></br><br></br><br></br>
+        <img src='https://media.giphy.com/media/pVK9JXQ4w1ck/giphy.gif' alt='Beyonce with your yummy pizza'/>
+        <h1 id="enjoy">Enjoy!</h1>
         </div>
         </Paper>)
       }
