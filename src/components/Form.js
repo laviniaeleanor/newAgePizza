@@ -9,29 +9,28 @@ class Form extends Component {
 
     updateBase = (base) => {
     this.props.updateBase(base)
-  }
+    }
 
-  updateSauce = (sauce) => {
-  this.props.updateSauce(sauce)
+    updateSauce = (sauce) => {
+    this.props.updateSauce(sauce)
+    }
+
+    updateToppings = (topping) => {
+    this.props.updateToppings(topping)
+    }
+
+    render() {
+        return (
+            <div className="Form">
+                <Base onSubmit = {this.updateBase}/>
+                <Sauce onSubmit = {this.updateSauce}/>
+                <Toppings onSubmit = {this.updateToppings}/>
+            </div>
+        );
+    }
 }
 
-updateToppings = (topping) => {
-this.props.updateToppings(topping)
-}
-
-  render() {
-
-    return (
-        <div className="Form">
-        <Base onSubmit = {this.updateBase}/>
-        <Sauce onSubmit = {this.updateSauce}/>
-        <Toppings onSubmit = {this.updateToppings}/>
-        </div>
-    );
-  }
-}
-
-const mapStateToProps = function (state) {
+const mapStateToProps = (state) => {
   return {
     pizza: state.pizza,
   }

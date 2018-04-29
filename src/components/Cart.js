@@ -28,8 +28,10 @@ class Cart extends PureComponent {
 
     render() {
         const {pizza} = this.props
+
         const toppings = pizza.toppings.map(topping =>
             <p>{topping}, € 0.50</p>)
+
         const toppingsPrice = toppings.length * 0.50
 
         const total = Number(pizza.base.price) + Number(pizza.sauce.price) + Number(toppingsPrice)
@@ -37,24 +39,32 @@ class Cart extends PureComponent {
 
         return (
         <Paper style={style.paper} zDepht='4'>
-          <div className = "Cart">
-          <h1>~ Your new age pizza ~</h1><br></br>
+            <div className = "Cart">
 
-          <p><strong>Base</strong>: {pizza.base.name}, € {pizza.base.price}</p><br></br>
-          <p><strong>Sauce</strong>: {pizza.sauce.name}, € {pizza.sauce.price}</p><br></br>
-          <p><strong>Toppings</strong>:</p>
-          {toppings}<br></br>
-          { pizza.delivery === false &&
-          <p><strong>TOTAL</strong>: € {total}</p>
-      }
-      { pizza.delivery === true &&
-            <p><strong>TOTAL</strong>: € {totalDelivery}</p>
-        }
-        <RaisedButton label = {pizza.delivery? "Remove Turbo Delivery":"Add Turbo Delivery"} style={style.button} onClick = {this.addDelivery}></RaisedButton><br></br><br></br>
-        <RaisedButton label="Place Order" style= {style.button} backgroundColor= {deepOrange200} onClick={()=> alert("Pizza is on it's way")} /><br></br><br></br><br></br>
-        <img src='https://media.giphy.com/media/pVK9JXQ4w1ck/giphy.gif' alt='Beyonce with your yummy pizza'/>
-        <h1 id="enjoy">Enjoy!</h1>
-        </div>
+                <h1>~ Your new age pizza ~</h1><br></br>
+
+                <p><strong>Base</strong>: {pizza.base.name}, € {pizza.base.price}</p><br></br>
+
+                <p><strong>Sauce</strong>: {pizza.sauce.name}, € {pizza.sauce.price}</p><br></br>
+
+                <p><strong>Toppings</strong>:</p>
+                {toppings}<br></br>
+
+                { pizza.delivery === false &&
+                <p><strong>TOTAL</strong>: € {total.toFixed(2)}</p>
+                }
+                { pizza.delivery === true &&
+                <p><strong>TOTAL</strong>: € {totalDelivery.toFixed(2)}</p>
+                }
+
+                <RaisedButton label = {pizza.delivery? "Remove Turbo Delivery":"Add Turbo Delivery"} style={style.button} onClick = {this.addDelivery}></RaisedButton><br></br><br></br>
+
+                <RaisedButton label="Place Order" style= {style.button} backgroundColor= {deepOrange200} onClick={()=> alert("Pizza is on it's way")} /><br></br><br></br><br></br>
+
+                <img src='https://media.giphy.com/media/pVK9JXQ4w1ck/giphy.gif' alt='Beyonce with your yummy pizza'/>
+
+                <h1 id="enjoy">Enjoy!</h1>
+            </div>
         </Paper>)
       }
     }
