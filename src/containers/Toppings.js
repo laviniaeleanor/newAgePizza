@@ -5,27 +5,17 @@ import Paper from 'material-ui/Paper';
 export class Toppings extends Component {
   state = {toppings: []}
 
-  checkItem = (item, e) => {
-      let toppings = this.state.toppings
-      toppings[item.id] = e.target.checked
-      this.setState({toppings})
-  }
-
   handleChange = (e) => {
-        console.log(this.state)
-        const newTopping = e.target.name
-        console.log(e.target.checked)
-        console.log(e.target.name)
-        console.log(this.state.toppings)
         if (e.target.checked === true)
-        this.setState({toppings: [...this.state.toppings, newTopping]})
-        else this.setState(this.state.toppings.filter(name => name !== e.target.name))
-        // console.log(Object.values(this.state.toppings).map(array => array.name))
+        this.setState({toppings: [...this.state.toppings, e.target.name]})
+        else
+        {const newArray = this.state.toppings.filter(name => name !== e.target.name)
+        this.setState({toppings: newArray})}
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        if (this.state.toppings.length > 3) return alert("Please only choose two toppings")
+        if (this.state.toppings.length > 3) return alert("Please only choose three toppings")
         this.props.onSubmit(this.state.toppings)
         console.log('You have selected:', this.state.toppings);
 }
