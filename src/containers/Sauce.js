@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {whiteSauce, redSauce, doubleRedSauce, mixItUp} from '../data/menu'
+import Paper from 'material-ui/Paper';
 
 export class Sauce extends Component {
   state = {}
@@ -16,17 +17,21 @@ export class Sauce extends Component {
 
   render() {
     return (
-        <div>
+        <Paper>
             <form onSubmit={this.handleSubmit}>
-            <label> Choose your favorite sauce:<br></br>
+            <h2> Choose your favorite sauce:</h2>
+
               <input type="radio" name= {whiteSauce.name} value={whiteSauce.price} onChange={this.handleChange} checked={this.state.name === whiteSauce.name}/>{whiteSauce.name}<br></br>
+
               <input type="radio" name= {redSauce.name} value={redSauce.price} onChange={this.handleChange} checked={this.state.name === redSauce.name}/>{redSauce.name}<br></br>
+
               <input type="radio" name= {doubleRedSauce.name} value={doubleRedSauce.price} onChange={this.handleChange} checked={this.state.name === doubleRedSauce.name}/>{doubleRedSauce.name}<br></br>
+
               <input type="radio" name= {mixItUp.name} value={mixItUp.price} onChange={this.handleChange} checked={this.state.name === mixItUp.name}/>{mixItUp.name}<br></br>
-              </label>
+
               <button className="btn btn-default" type="submit">Save</button>
             </form>
-        </div>
+        </Paper>
     );
   }
 }

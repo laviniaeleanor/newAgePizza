@@ -9,10 +9,7 @@ import {teal500} from 'material-ui/styles/colors';
 const muiTheme = getMuiTheme({
   palette: {
     textColor: teal500,
-  },
-  appBar: {
-    height: 50,
-  },
+  }
 });
 
 const App = () => (

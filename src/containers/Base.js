@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {base20, base25, base30, base35} from '../data/menu'
-// import {updateBase} from '../actions/pizza'
+import Paper from 'material-ui/Paper'
 
 export class Base extends Component {
   state = {}
@@ -17,17 +17,20 @@ export class Base extends Component {
 
   render() {
     return (
-        <div>
+        <Paper>
             <form onSubmit={this.handleSubmit}>
-            <label> Choose your pizza size:<br></br>
+            <h2> Choose your pizza size:</h2>
               <input type="radio" name= {base25.name} value={base25.price} onChange={this.handleChange} checked={this.state.name === base25.name}/>{base25.name}<br></br>
+
               <input type="radio" name= {base30.name} value={base30.price} onChange={this.handleChange} checked={this.state.name === base30.name}/>{base30.name}<br></br>
+
               <input type="radio" name= {base35.name} value={base35.price} onChange={this.handleChange} checked={this.state.name === base35.name}/>{base35.name}<br></br>
+
               <input type="radio" name= {base20.name} value={base20.price} onChange={this.handleChange} checked={this.state.name === base20.name}/>{base20.name}<br></br>
-              </label>
+
               <button className="btn btn-default" type="submit">Save</button>
             </form>
-        </div>
+        </Paper>
     );
   }
 }
