@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import Paper from 'material-ui/Paper';
-import {Toggle} from '../containers/Toggle'
 import {addDelivery} from '../actions/pizza'
 
 // const style = {
