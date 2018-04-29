@@ -20,7 +20,6 @@ this.props.updateToppings(topping)
 }
 
   render() {
-    const { pizza } = this.props
 
     return (
         <div className="Form">

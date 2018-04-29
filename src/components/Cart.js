@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import Paper from 'material-ui/Paper';
 import {addDelivery} from '../actions/pizza'
+import RaisedButton from 'material-ui/RaisedButton';
 
 // const style = {
 //   height: 100,
@@ -28,19 +29,21 @@ class Cart extends PureComponent {
 
         return (
         <Paper className="outer-paper">
-          <h1>Your new age pizza</h1>
+          <div className = "Cart">
+          <h1>Your order</h1>
 
           <p><strong>Base</strong>: {pizza.base.name}, € {pizza.base.price}</p>
           <p><strong>Sauce</strong>: {pizza.sauce.name}, € {pizza.sauce.price}</p>
           <p><strong>Toppings</strong>:</p>
           {toppings}
-          <button onClick = {this.addDelivery}>{pizza.delivery? "Remove Turbo Delivery":"Add Turbo Delivery"}</button>
+          <RaisedButton onClick = {this.addDelivery}>{pizza.delivery? "Remove Turbo Delivery":"Add Turbo Delivery"}</RaisedButton>
           { pizza.delivery === false &&
           <p><strong>Total</strong>: € {total}</p>
       }
       { pizza.delivery === true &&
             <p><strong>Total</strong>: € {totalDelivery}</p>
         }
+        </div>
         </Paper>)
       }
     }

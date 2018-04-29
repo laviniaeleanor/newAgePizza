@@ -4,12 +4,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import Form from './components/Form';
 import Cart from './components/Cart';
-import {teal500, teal800} from 'material-ui/styles/colors';
+import {deepOrange900} from 'material-ui/styles/colors';
+import './App.css';
 
 const muiTheme = getMuiTheme({
-  palette: {
-    textColor: teal800
-},
 appBar: {
     height: 100,
   }
@@ -20,14 +18,17 @@ const style = {
   textAlign: 'center',
   fontFamily: 'Pacifico',
   fontSize: 40,
-  backgroundColor: teal500
+  backgroundColor: deepOrange900
 };
 
 const App = () => (
   <MuiThemeProvider muiTheme={muiTheme}>
-    <AppBar showMenuIconButton = {false} title="New Age Pizza" style = {style} titleStyle={style} />
+    <AppBar showMenuIconButton = {false} title="~ New Age Pizza ~" style = {style} titleStyle={style} />
+    <h1 className = "header">Make your own pizza</h1>
+    <div className = "Page">
     <Form />
     <Cart/>
+    </div>
   </MuiThemeProvider>
 );
 

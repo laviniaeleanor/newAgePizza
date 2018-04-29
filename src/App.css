@@ -1,28 +1,26 @@
-.App {
-  text-align: center;
+h1.header {
+    font-size: 60px;
+    font-family: 'Pacifico';
+    text-align: center;
+    font-weight: lighter;
+    color: inherit;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body{
+    background-color: #FFF
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.Page{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
 }
 
-.App-title {
-  font-size: 1.5em;
+.Cart {
+    width: 500px;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Form {
+    width: 500px;
+    color: #FFF;
 }

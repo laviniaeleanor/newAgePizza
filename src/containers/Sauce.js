@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {whiteSauce, redSauce, doubleRedSauce, mixItUp} from '../data/menu'
 import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export class Sauce extends Component {
   state = {}
@@ -29,7 +30,7 @@ export class Sauce extends Component {
 
               <input type="radio" name= {mixItUp.name} value={mixItUp.price} onChange={this.handleChange} checked={this.state.name === mixItUp.name}/>{mixItUp.name}<br></br>
 
-              <button className="btn btn-default" type="submit">Save</button>
+              <RaisedButton className="btn btn-default" type="submit">Save</RaisedButton>
             </form>
         </Paper>
     );

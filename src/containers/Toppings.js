@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {pineapple, corn, olives, redOnion, spinach, cherryTomatoes, chicken} from '../data/menu'
 import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export class Toppings extends Component {
   state = {toppings: []}
@@ -40,7 +41,7 @@ export class Toppings extends Component {
 
               <input type="checkbox" className="limited" name= {chicken.name} value={chicken.name} onChange={this.handleChange} />{chicken.name}<br></br>
 
-              <button className="btn btn-default" type="submit">Save</button>
+              <RaisedButton className="btn btn-default" type="submit">Save</RaisedButton>
             </form>
         </Paper>
     );
