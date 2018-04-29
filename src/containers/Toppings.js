@@ -29,19 +29,26 @@ function limitchex(oCheckbox, limit)
 }
 
 export class Toppings extends Component {
-  state = {}
+  state = {toppings: {}}
 
-
+  checkItem = (item, e) => {
+      let toppings = this.state.toppings
+      toppings[item.id] = e.target.checked
+      this.setState({toppings})
+  }
 
   handleChange = (e) => {
-        this.setState(...this.state, {name: e.target.name, price: e.target.value})
+        console.log(this.state)
+        const newTopping = {name: e.target.name, price: e.target.value}
+        console.log(newTopping)
+        this.setState({toppings: [...this.state.toppings, newTopping]})
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
         // limit(3)
-        this.props.onSubmit(this.state)
-        console.log('You have selected:', this.state);
+        this.props.onSubmit(this.state.toppings)
+        console.log('You have selected:', this.state.toppings);
 }
 
   render() {

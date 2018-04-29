@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
         return {...state, sauce: action.payload}
 
     case UPDATE_TOPPINGS :
-        return {...state, toppings: [...state, action.payload]}
+        return {...state, toppings: Object.values(action.payload)}
 
     default :
       return state
