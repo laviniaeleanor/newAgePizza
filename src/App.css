@@ -18,9 +18,30 @@ body{
 
 .Cart {
     width: 500px;
+    color: #FFF;
+    margin-bottom: 15px;
+    font-family: 'Roboto';
+    font-size: 22px;
 }
 
 .Form {
     width: 500px;
     color: #FFF;
+    font-size: 18px;
+}
+
+h1{
+    font-family: 'Pacifico';
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+h2{
+    font-family: 'Roboto';
+}
+
+input{
+    font-family: 'Roboto';
+    font-size: 18px;
+    margin-bottom: 15px;
 }

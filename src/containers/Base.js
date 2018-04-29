@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {base20, base25, base30, base35} from '../data/menu'
 import Paper from 'material-ui/Paper'
-import RaisedButton from 'material-ui/RaisedButton';
-import {teal500} from 'material-ui/styles/colors';
+// import RaisedButton from 'material-ui/RaisedButton';
+import {teal500, deepOrange500} from 'material-ui/styles/colors';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const style = {
   width: 500,
@@ -12,6 +14,7 @@ const style = {
   display: 'inline-block',
   backgroundColor: teal500,
 };
+
 
 export class Base extends Component {
   state = {}
@@ -39,7 +42,7 @@ export class Base extends Component {
 
               <input type="radio" name= {base20.name} value={base20.price} onChange={this.handleChange} checked={this.state.name === base20.name}/>{base20.name}<br></br>
 
-              <RaisedButton className="btn btn-default" type="submit">Save</RaisedButton>
+              <FloatingActionButton className= "Add" backgroundColor={deepOrange500} zDepht='3' type="submit"><ContentAdd /></FloatingActionButton>
             </form>
         </Paper>
     );

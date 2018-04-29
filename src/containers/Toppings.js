@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import {pineapple, corn, olives, redOnion, spinach, cherryTomatoes, chicken} from '../data/menu'
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton';
+import {teal900, deepOrange500} from 'material-ui/styles/colors';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
+const style = {
+  width: 500,
+  padding: "2em",
+  margin: "1em",
+  textAlign: 'left',
+  display: 'inline-block',
+  backgroundColor: teal900,
+};
 
 export class Toppings extends Component {
   state = {toppings: []}
@@ -23,9 +34,9 @@ export class Toppings extends Component {
 
   render() {
     return (
-        <Paper>
-            <form name = "toppings" onSubmit={this.handleSubmit}>
-            <h2> Choose up to three toppings:</h2>
+        <Paper style={style}>
+            <form className="Form" name = "toppings" onSubmit={this.handleSubmit}>
+            <h2> Step 3 - Choose up to three toppings:</h2>
 
               <input type="checkbox" className="limited" name= {pineapple.name} value={pineapple.name} onChange={this.handleChange}/>{pineapple.name}<br></br>
 
@@ -41,7 +52,7 @@ export class Toppings extends Component {
 
               <input type="checkbox" className="limited" name= {chicken.name} value={chicken.name} onChange={this.handleChange} />{chicken.name}<br></br>
 
-              <RaisedButton className="btn btn-default" type="submit">Save</RaisedButton>
+              <FloatingActionButton className= "Add" backgroundColor={deepOrange500} zDepht='3' type="submit"><ContentAdd /></FloatingActionButton>
             </form>
         </Paper>
     );

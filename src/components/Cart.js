@@ -3,14 +3,16 @@ import {connect} from 'react-redux'
 import Paper from 'material-ui/Paper';
 import {addDelivery} from '../actions/pizza'
 import RaisedButton from 'material-ui/RaisedButton';
+import {teal700} from 'material-ui/styles/colors';
 
-// const style = {
-//   height: 100,
-//   width: 100,
-//   margin: 20,
-//   textAlign: 'center',
-//   display: 'inline-block',
-// };
+const style = {
+  width: 500,
+  padding: "2em",
+  margin: "1em",
+  textAlign: 'left',
+  display: 'inline-block',
+  backgroundColor: teal700,
+};
 
 class Cart extends PureComponent {
 
@@ -28,9 +30,9 @@ class Cart extends PureComponent {
         const totalDelivery = total + (total/100*10)
 
         return (
-        <Paper className="outer-paper">
+        <Paper style={style} zDepht='4'>
           <div className = "Cart">
-          <h1>Your order</h1>
+          <h1>~ Your new age pizza ~</h1>
 
           <p><strong>Base</strong>: {pizza.base.name}, € {pizza.base.price}</p>
           <p><strong>Sauce</strong>: {pizza.sauce.name}, € {pizza.sauce.price}</p>
